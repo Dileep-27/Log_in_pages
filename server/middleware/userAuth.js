@@ -13,7 +13,7 @@ const userAuth = async (req, res, next) => {
 
     if (tokenDecode.id) {
       // Add userId to request body for controller access 
-      req.body.userId = tokenDecode.id;
+      req.userId = tokenDecode.id;
       next(); // Proceed to the next middleware/controller 
     } else {
       return res.json({ success: false, message: 'Not authorized, login again' }); 
